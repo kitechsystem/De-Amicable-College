@@ -1,0 +1,6 @@
+{
+  "name": "De-Amicable College",
+  "description": "Official website of De-Amicable College, a private secondary school in Ikotun, Lagos State, Nigeria. Building bright minds and inspiring future leaders since September 2010.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
