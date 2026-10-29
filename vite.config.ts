@@ -1,17 +1,26 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
-import {defineConfig} from 'vite';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Relative base path ensures assets load properly on GitHub Pages (subpaths) and Vercel
+    base: './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': fileURLToPath(new URL('.', import.meta.url)),
       },
     },
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+      sourcemap: false,
+    },
     server: {
+      port: 3000,
+      host: '0.0.0.0',
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
