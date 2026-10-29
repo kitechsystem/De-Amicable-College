@@ -3,7 +3,7 @@ import { useSchool } from '../context/SchoolContext';
 import { X, Calendar, User, Tag, ArrowRight } from 'lucide-react';
 
 export const NewsArticleModal: React.FC = () => {
-  const { selectedNewsArticle, setSelectedNewsArticle, setCurrentPage } = useSchool();
+  const { selectedNewsArticle, setSelectedNewsArticle, setCurrentPage, schoolInfo } = useSchool();
 
   if (!selectedNewsArticle) return null;
 
@@ -17,14 +17,24 @@ export const NewsArticleModal: React.FC = () => {
       >
         {/* Header */}
         <div className="bg-[#008F50] text-white px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-xs uppercase tracking-wider font-bold bg-[#D8C900] text-slate-900 px-2 py-0.5 rounded-sm">
-              {selectedNewsArticle.category}
-            </span>
-            <span className="text-xs text-emerald-100 flex items-center gap-1">
-              <Calendar className="w-3.5 h-3.5" />
-              <span>{selectedNewsArticle.date}</span>
-            </span>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-white p-0.5 border border-white/40 shrink-0 shadow-xs">
+              <img 
+                src={schoolInfo.logoUrl} 
+                alt="De-Amicable College Official Logo" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs uppercase tracking-wider font-bold bg-[#D8C900] text-slate-900 px-2 py-0.5 rounded-sm">
+                {selectedNewsArticle.category}
+              </span>
+              <span className="text-xs text-emerald-100 flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5" />
+                <span>{selectedNewsArticle.date}</span>
+              </span>
+            </div>
           </div>
 
           <button

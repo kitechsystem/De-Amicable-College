@@ -80,104 +80,109 @@ export const StaffPortalModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/60 backdrop-blur-xs">
       <div 
-        className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] border border-slate-200"
+        className="bg-white w-full max-w-4xl h-[92vh] max-h-[92vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-slate-200"
         role="dialog"
         aria-modal="true"
         aria-labelledby="portal-title"
       >
-        {/* Modal Header */}
-        <div className="bg-[#008F50] text-white px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-white/20 p-1 flex items-center justify-center">
+        {/* Modal Header - Fixed and Never Hidden */}
+        <div className="shrink-0 bg-[#008F50] text-white px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between z-20 shadow-xs">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-full bg-white p-1 flex items-center justify-center shadow-xs border-2 border-[#D8C900]">
               <img 
                 src={schoolInfo.logoUrl} 
-                alt="De-Amicable crest" 
+                alt="De-Amicable College Official Logo" 
                 className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div>
-              <h2 id="portal-title" className="text-lg font-bold">De-Amicable College Administration Portal</h2>
-              <p className="text-xs text-emerald-100">Manage school operating hours, verified subjects, news & student inquiries</p>
+            <div className="min-w-0">
+              <h2 id="portal-title" className="text-base sm:text-lg font-bold truncate">De-Amicable College Administration Portal</h2>
+              <p className="text-[11px] sm:text-xs text-emerald-100 truncate">Manage school operating hours, verified subjects, news & student inquiries</p>
             </div>
           </div>
 
           <button
             onClick={() => setIsStaffModalOpen(false)}
-            className="p-1.5 rounded-lg text-emerald-100 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="shrink-0 ml-2 p-1.5 sm:p-2 rounded-lg text-emerald-100 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
             aria-label="Close portal"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 shrink-0" />
           </button>
         </div>
 
-        {/* Navigation Tabs */}
-        <div className="flex border-b border-slate-200 bg-slate-50 px-6 overflow-x-auto text-xs font-semibold">
+        {/* Navigation Tabs (Top Menu) - Fixed and Never Hidden */}
+        <div className="shrink-0 flex border-b border-slate-200 bg-slate-50 px-3 sm:px-6 overflow-x-auto text-xs font-semibold shadow-xs z-10">
           <button
+            type="button"
             onClick={() => setActiveTab('hours')}
-            className={`py-3 px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer ${
+            className={`py-3.5 px-3.5 sm:px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer shrink-0 ${
               activeTab === 'hours'
-                ? 'border-[#008F50] text-[#008F50] bg-white'
+                ? 'border-[#008F50] text-[#008F50] bg-white font-bold'
                 : 'border-transparent text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Clock className="w-4 h-4" />
+            <Clock className="w-4 h-4 shrink-0 text-[#008F50]" />
             <span>School Hours</span>
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab('subjects')}
-            className={`py-3 px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer ${
+            className={`py-3.5 px-3.5 sm:px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer shrink-0 ${
               activeTab === 'subjects'
-                ? 'border-[#008F50] text-[#008F50] bg-white'
+                ? 'border-[#008F50] text-[#008F50] bg-white font-bold'
                 : 'border-transparent text-slate-600 hover:text-slate-900'
             }`}
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen className="w-4 h-4 shrink-0 text-[#008F50]" />
             <span>Manage Subjects ({subjects.length})</span>
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab('news')}
-            className={`py-3 px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer ${
+            className={`py-3.5 px-3.5 sm:px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer shrink-0 ${
               activeTab === 'news'
-                ? 'border-[#008F50] text-[#008F50] bg-white'
+                ? 'border-[#008F50] text-[#008F50] bg-white font-bold'
                 : 'border-transparent text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Newspaper className="w-4 h-4" />
+            <Newspaper className="w-4 h-4 shrink-0 text-[#008F50]" />
             <span>News & Announcements ({news.length})</span>
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab('inquiries')}
-            className={`py-3 px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer ${
+            className={`py-3.5 px-3.5 sm:px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer shrink-0 ${
               activeTab === 'inquiries'
-                ? 'border-[#008F50] text-[#008F50] bg-white'
+                ? 'border-[#008F50] text-[#008F50] bg-white font-bold'
                 : 'border-transparent text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Users className="w-4 h-4" />
+            <Users className="w-4 h-4 shrink-0 text-[#008F50]" />
             <span>Admission Enquiries ({admissionInquiries.length})</span>
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab('messages')}
-            className={`py-3 px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer ${
+            className={`py-3.5 px-3.5 sm:px-4 border-b-2 flex items-center gap-2 transition-colors whitespace-nowrap cursor-pointer shrink-0 ${
               activeTab === 'messages'
-                ? 'border-[#008F50] text-[#008F50] bg-white'
+                ? 'border-[#008F50] text-[#008F50] bg-white font-bold'
                 : 'border-transparent text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Mail className="w-4 h-4" />
+            <Mail className="w-4 h-4 shrink-0 text-[#008F50]" />
             <span>Contact Messages ({contactMessages.length})</span>
           </button>
         </div>
 
-        {/* Tab Content */}
-        <div className="flex-1 overflow-y-auto p-6 text-sm">
+        {/* Tab Content - Scrollable with min-h-0 to preserve header and top menu */}
+        <div className="flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 text-sm bg-white">
           
           {/* TAB 1: School Hours */}
           {activeTab === 'hours' && (

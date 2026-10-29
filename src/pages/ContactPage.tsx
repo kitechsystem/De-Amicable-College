@@ -97,9 +97,22 @@ export const ContactPage: React.FC = () => {
         <div className="lg:col-span-5 space-y-6">
           
           <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-5">
-            <h2 className="text-base font-bold text-slate-900 uppercase tracking-wider text-[#008F50]">
-              Official School Contact Information
-            </h2>
+            <div className="flex items-center gap-3 pb-2 border-b border-slate-200">
+              <div className="w-12 h-12 rounded-full bg-white p-1 border-2 border-[#008F50] shrink-0 shadow-xs">
+                <img 
+                  src={schoolInfo.logoUrl} 
+                  alt="De-Amicable College Official Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div>
+                <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider text-[#008F50]">
+                  Official School Information
+                </h2>
+                <span className="text-[11px] text-slate-500">Ikotun Campus, Lagos State</span>
+              </div>
+            </div>
 
             <div className="space-y-4 text-xs text-slate-700">
               

@@ -49,8 +49,18 @@ export const GalleryPage: React.FC = () => {
       
       {/* Page Header */}
       <div className="border-b border-slate-200 pb-8 space-y-3">
-        <div className="text-xs font-bold text-[#008F50] uppercase tracking-wider">
-          Visual Archive
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-white p-1 border-2 border-[#008F50] shrink-0 shadow-xs">
+            <img 
+              src={schoolInfo.logoUrl} 
+              alt="De-Amicable College Official Logo" 
+              className="w-full h-full object-contain"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="text-xs font-bold text-[#008F50] uppercase tracking-wider">
+            Visual Archive
+          </div>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
           School Photo Gallery

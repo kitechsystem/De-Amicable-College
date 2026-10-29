@@ -179,13 +179,25 @@ export const AdmissionsPage: React.FC = () => {
           <div className="bg-white rounded-2xl border-2 border-emerald-100 p-6 sm:p-8 shadow-sm space-y-6">
             
             <div>
-              <div className="inline-block text-[11px] font-bold text-[#008F50] uppercase tracking-wider">
-                Official Admissions Desk
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-white p-1 border-2 border-[#008F50] shrink-0 shadow-xs">
+                  <img 
+                    src={schoolInfo.logoUrl} 
+                    alt="De-Amicable College Official Logo" 
+                    className="w-full h-full object-contain"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <div className="inline-block text-[11px] font-bold text-[#008F50] uppercase tracking-wider">
+                    Official Admissions Desk
+                  </div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">
+                    Admission Enquiry Form
+                  </h2>
+                </div>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
-                Admission Enquiry Form
-              </h2>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-500 mt-2">
                 Please complete this form to register your interest. Our admissions officer will review your request and get in touch via your preferred contact method.
               </p>
             </div>

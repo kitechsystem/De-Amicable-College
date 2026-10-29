@@ -81,7 +81,14 @@ export const SchoolProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [schoolInfo, setSchoolInfo] = useState<SchoolInfo>(() => {
     try {
       const saved = localStorage.getItem('de_amicable_info');
-      return saved ? JSON.parse(saved) : INITIAL_SCHOOL_INFO;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        return {
+          ...parsed,
+          logoUrl: INITIAL_SCHOOL_INFO.logoUrl
+        };
+      }
+      return INITIAL_SCHOOL_INFO;
     } catch {
       return INITIAL_SCHOOL_INFO;
     }

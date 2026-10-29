@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export const NewsPage: React.FC = () => {
-  const { news, setSelectedNewsArticle, setIsStaffModalOpen } = useSchool();
+  const { news, setSelectedNewsArticle, setIsStaffModalOpen, schoolInfo } = useSchool();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -34,8 +34,18 @@ export const NewsPage: React.FC = () => {
       {/* Page Header */}
       <div className="border-b border-slate-200 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div className="space-y-3 max-w-2xl">
-          <div className="text-xs font-bold text-[#008F50] uppercase tracking-wider">
-            Official Notices & Bulletin
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-white p-1 border-2 border-[#008F50] shrink-0 shadow-xs">
+              <img 
+                src={schoolInfo.logoUrl} 
+                alt="De-Amicable College Official Logo" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="text-xs font-bold text-[#008F50] uppercase tracking-wider">
+              Official Notices & Bulletin
+            </div>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             News and Events

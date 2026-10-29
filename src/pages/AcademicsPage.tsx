@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 export const AcademicsPage: React.FC = () => {
-  const { subjects, setIsStaffModalOpen, setCurrentPage } = useSchool();
+  const { subjects, setIsStaffModalOpen, setCurrentPage, schoolInfo } = useSchool();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -59,7 +59,21 @@ export const AcademicsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl border border-emerald-100 shadow-xs space-y-2 text-xs">
+          <div className="bg-white p-5 rounded-xl border border-emerald-100 shadow-xs space-y-3 text-xs">
+            <div className="flex items-center gap-2.5 pb-2 border-b border-emerald-100">
+              <div className="w-10 h-10 rounded-full bg-white p-1 border-2 border-[#008F50] shrink-0 shadow-xs">
+                <img 
+                  src={schoolInfo.logoUrl} 
+                  alt="De-Amicable College Official Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div>
+                <strong className="text-slate-900 block font-bold">Approved Scheme</strong>
+                <span className="text-[10px] text-[#008F50] font-semibold">Lagos State Standards</span>
+              </div>
+            </div>
             <strong className="text-slate-900 block font-bold">Academic Calendar Focus:</strong>
             <ul className="space-y-1 text-slate-600">
               <li className="flex items-center gap-1.5">

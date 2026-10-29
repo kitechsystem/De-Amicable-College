@@ -152,7 +152,22 @@ export const Header: React.FC = () => {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 shadow-xl animate-in slide-in-from-top duration-200">
+        <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200">
+          <div className="flex items-center gap-3 pb-3 mb-2 border-b border-slate-100">
+            <div className="w-10 h-10 rounded-full overflow-hidden p-0.5 bg-white border-2 border-[#008F50] shrink-0">
+              <img 
+                src={schoolInfo.logoUrl} 
+                alt="De-Amicable College Official Logo" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div>
+              <span className="block text-sm font-bold text-[#008F50]">De-Amicable College</span>
+              <span className="text-[10px] text-slate-500">Ikotun, Lagos State</span>
+            </div>
+          </div>
+
           <div className="flex flex-col space-y-1">
             {navItems.map((item) => {
               const isActive = currentPage === item.tab;

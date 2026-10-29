@@ -15,7 +15,7 @@ export const INITIAL_SCHOOL_INFO: SchoolInfo = {
   directions: "From Ikotun, divert to Ijegun Road, proceed towards Car Wash Bus Stop, and locate Abogunloko. The school is at 23, Ayodele Shitta Street.",
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=23+Ayodele+Shitta+Street+Ikotun+Lagos+Nigeria",
   whatsappUrl: "https://wa.me/2348023839502?text=Hello%20De-Amicable%20College,%20I%20would%20like%20to%20enquire%20about%20admissions.",
-  logoUrl: "/assets/aistudio/De-Amicable_coolege_logo_498d8e8a.jpg"
+  logoUrl: "/assets/aistudio/De-Amicable_college_logo_978b0ebe.png"
 };
 
 export const INITIAL_SUBJECTS: SubjectItem[] = [
